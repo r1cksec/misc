@@ -1,0 +1,14 @@
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,0,0)'
+bold-color='rgb(255,81,127)'
+bold-color-same-as-fg=false
+cursor-background-color='rgb(38,255,25)'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='rgb(0,0,0)'
+foreground-color='rgb(247,123,32)'
+highlight-background-color='rgb(184,249,249)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(0,0,0)'
+use-theme-colors=false
+

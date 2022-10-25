@@ -1,0 +1,26 @@
+alias ll='ls -lisa '
+alias grepIpv4="grep -Eo '([0-9]*\.){3}[0-9]*' "
+alias sortIp="sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4"
+alias clip="xclip -selection c "
+alias grepAllUrlsFromHtml="cat * | grep '<a ' | awk -F 'href=\"' '{print \$2}' | cut -d '\"' -f 1 | sort -u"
+alias penv='source ~/pythonEnvironments/pentest/bin/activate'
+alias p2env='source ~/pythonEnvironments/python2Env/bin/activate'
+alias diff="diff --color"
+alias kscp="bash ~/git/misc/scripts/manage/transfer-kali.sh"
+export PASSWORD_STORE_CLIP_TIME=25
+
+# stop vim from freezing after pressing ctrl + s
+stty -ixon
+
+# go
+#export PATH=$PATH:/usr/local/go/bin
+
+# blinking cursor
+echo -ne "\\x1b[1 q"
+
+PROMPT='%{\$fg[blue]%}%m%{\$reset_color%}%{\$fg_bold[white]%}%{\$reset_color%}%{\$fg[cyan]%}%~:%{\$reset_color%}\$(git_time_since_commit)>%{\$fg[red]%}%!%{\$reset_color%} \$(prompt_char) '
+
+source ~/.aliase
+source ~/git/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

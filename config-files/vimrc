@@ -1,0 +1,56 @@
+syntax on
+set tabstop=4
+filetype on
+set nu
+set ruler
+set mouse=a
+
+" write double chars
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" highlight all same string by mouse click
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+" auto indent
+set autoindent
+
+" define alias for replacing all tabs by 4 blanks, <bar> concats 2 commands
+cnoreabbrev tabl set tabstop=4 shiftwidth=4 expandtab <bar> retab
+
+" highlight current line
+set cursorline
+
+" for better search
+set ignorecase
+set smartcase 
+set showmatch 
+set hlsearch
+
+" specify filetype for dictionaries
+autocmd BufEnter *.cmd set dictionary+=~/.vim/dictionaries/dosbatch.txt
+autocmd BufEnter *.c set dictionary+=~/.vim/dictionaries/c.txt
+autocmd BufEnter *.cs set dictionary+=~/.vim/dictionaries/cs.txt
+autocmd BufEnter *.css set dictionary+=~/.vim/dictionaries/css.txt
+autocmd BufEnter *.html set dictionary+=~/.vim/dictionaries/html.txt
+autocmd BufEnter *.js set dictionary+=~/.vim/dictionaries/javascript.txt
+autocmd BufEnter *.md set dictionary+=~/.vim/dictionaries/md.txt
+autocmd BufEnter *.php set dictionary+=~/.vim/dictionaries/php.txt
+autocmd BufEnter *.py set dictionary+=~/.vim/dictionaries/py.txt
+autocmd BufEnter *.sh set dictionary+=~/.vim/dictionaries/sh.txt
+autocmd BufEnter *.vbs set dictionary+=~/.vim/dictionaries/vbs.txt
+
+" change keyboard shortcut for autocompletion
+inoremap yy <C-X><C-K>
+
+# ultisnips
+"set runtimepath+=~/git/ultisnips/
+
+" used to recognize tex file as tex filetype and not plaintex
+let g:tex_flavor = "latex"
+
