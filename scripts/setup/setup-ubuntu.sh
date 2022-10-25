@@ -13,9 +13,10 @@ fi
 
 echo "Enter full path to your home directory:"
 read homeDir
+username=$(basename ${homeDir})
 
 apt update && sudo apt upgrade
-apt install i3lock htop flameshot jmtpfs python3-venv p7zip-full vim-ultisnips whois vim virtualbox virtualbox-qt virtualbox-dkms ssh ufw john zsh xclip git pass vim-gtk virtualbox-ext-pack curl vlc feh inkscape arandr vim-gtk3 virtualbox-ext-pack grip
+apt install htop flameshot jmtpfs python3-venv p7zip-full vim whois virtualbox virtualbox-qt virtualbox-dkms ssh ufw john zsh xclip git pass vim-gtk curl vlc feh inkscape arandr vim-gtk3 grip wl-clipboard texlive-latex-extra texlive-fonts-extra texlive-lang-german
 snap install chromium spotify
 
 rego="R"
@@ -54,11 +55,46 @@ curl https://raw.githubusercontent.com/r1cksec/misc/main/config-files/zshrc >> $
 echo "" >> ${homeDir}/.bashrc
 curl https://raw.githubusercontent.com/r1cksec/misc/main/config-files/bashrc >> ${homeDir}/.bashrc
 
+# ultisnips
+git clone https://github.com/SirVer/ultisnips.git {homeDir}/git/ultisnips
+mkdir -p ${homeDir}/.vim/{UltiSnips,dictionaries}
+mkdir -p ${homeDir}/.vim/ftdetect
+ln -s ${homeDir}/git/ultisnips/ftdetect/* ${homeDir}/.vim/ftdetect
+
 # vim
 wget https://raw.githubusercontent.com/r1cksec/misc/main/config-files/vimrc -O ${homeDir}/.vimrc
 
 # signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg gnome-tweak-tool
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
+wget https://updates.signal.org/desktop/apt/keys.asc -O /tmp/signal.asc
+cat /tmp/signal.asc | sudo apt-key add
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" >> /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update && sudo apt install signal-desktop
+
+chsh -s /usr/bin/zsh
+cd ${homeDir}
+chown -R ${username}:${username} *
+chown -R ${username}:${username} .*
+
+Start default profile
+https://addons.mozilla.org/en-US/firefox/addon/redandblacktheme
+https://addons.mozilla.org/en-US/firefox/addon/canvasblocker
+https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17
+https://addons.mozilla.org/en-US/firefox/addon/darkreader
+https://addons.mozilla.org/en-US/firefox/addon/ublock-origin
+https://addons.mozilla.org/en-US/firefox/addon/umatrix
+
+Start news profile
+https://addons.mozilla.org/en-GB/firefox/addon/simply-black-and-light-blue
+https://addons.mozilla.org/en-US/firefox/addon/ublock-origin
+https://addons.mozilla.org/en-US/firefox/addon/umatrix
+https://blog.badsectorlabs.com
+https://thehackernews.com
+https://latesthackingnews.com
+https://portswigger.net/daily-swig
+https://www.golem.de/specials/security
+https://www.heise.de/security
+https://twitter.com/search?q=CVE%20poc%20min_faves%3A10&src=typed_query&f=live
+https://twitter.com/search?q=linux%20exploit%20min_faves%3A10&src=typed_query&f=live
+https://twitter.com/search?q=vulnerability%20infosec%20min_faves%3A10&src=typed_query
+https://twitter.com/search?q=windows%20exploit%20min_faves%3A10&src=typed_query&f=live
 

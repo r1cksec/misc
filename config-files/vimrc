@@ -48,7 +48,7 @@ autocmd BufEnter *.vbs set dictionary+=~/.vim/dictionaries/vbs.txt
 " change keyboard shortcut for autocompletion
 inoremap yy <C-X><C-K>
 
-# ultisnips
+" ultisnips
 "set runtimepath+=~/git/ultisnips/
 
 " used to recognize tex file as tex filetype and not plaintex

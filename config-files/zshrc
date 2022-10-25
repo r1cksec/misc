@@ -18,7 +18,7 @@ stty -ixon
 # blinking cursor
 echo -ne "\\x1b[1 q"
 
-PROMPT='%{\$fg[blue]%}%m%{\$reset_color%}%{\$fg_bold[white]%}%{\$reset_color%}%{\$fg[cyan]%}%~:%{\$reset_color%}\$(git_time_since_commit)>%{\$fg[red]%}%!%{\$reset_color%} \$(prompt_char) '
+#PROMPT='%{\$fg[blue]%}%m%{\$reset_color%}%{\$fg_bold[white]%}%{\$reset_color%}%{\$fg[cyan]%}%~:%{\$reset_color%}\$(git_time_since_commit)>%{\$fg[red]%}%!%{\$reset_color%} \$(prompt_char) '
 
 source ~/.aliase
 source ~/git/zsh-autosuggestions/zsh-autosuggestions.zsh

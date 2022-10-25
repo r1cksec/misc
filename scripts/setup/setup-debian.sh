@@ -64,6 +64,7 @@ then
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="dieter"/g' ${homeDir}/.zshrc
     echo "" >> ${homeDir}/.zshrc
     curl https://raw.githubusercontent.com/r1cksec/misc/main/config-files/zshrc >> ${homeDir}/.zshrc
+	chsh -s /usr/bin/zsh
     
     # bash
     echo "" >> ${homeDir}/.bashrc
