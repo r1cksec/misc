@@ -64,6 +64,12 @@ ln -s ${homeDir}/git/ultisnips/ftdetect/* ${homeDir}/.vim/ftdetect
 # vim
 wget https://raw.githubusercontent.com/r1cksec/misc/main/config-files/vimrc -O ${homeDir}/.vimrc
 
+# ufw
+ufw default deny
+ufw allow 22/tcp
+ufw allow 80/tcp
+ufw enable
+
 # signal
 wget https://updates.signal.org/desktop/apt/keys.asc -O /tmp/signal.asc
 cat /tmp/signal.asc | sudo apt-key add

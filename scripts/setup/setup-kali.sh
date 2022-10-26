@@ -284,6 +284,7 @@ sysctl net.ipv4.ip_unprivileged_port_start=0
 # close rpc port
 systemctl disable rpcbind.service
 
+# systemd low battery notification
 cat > /etc/systemd/system/battery.service <<EOL
 [Unit]
 Description=send notification when battery level is low
@@ -307,8 +308,34 @@ OnBootSec=3m
 WantedBy=timers.target
 EOL
 
-systemctl daemon-reload
 systemctl enable battery.timer
+
+# ip configuration
+cat > /etc/systemd/system/ipconfig.service <<EOL
+[Unit]
+Description=configure ip addresses
+
+[Service]
+ser=root
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/sudo /bin/bash ${homeDir}/config/scripts/config-ip.sh
+EOL
+
+cat > /etc/systemd/system/ipconfig.timer <<EOL
+[Unit]
+Description=configure ip addresses
+
+[Timer]
+OnUnitActiveSec=2m
+OnBootSec=0m
+
+[Install]
+WantedBy=timers.target
+EOL
+
+systemctl enable ipconfig.timer
+systemctl daemon-reload
 
 # history 
 cat ${homeDir}/git/cheatsheets/linux/* | grep -A 2 "###" | grep "\`" -A 1 | grep -v "\`\|--\|,\|+\|:\|ä\|ö\|ü\|msf\| = \|%" | awk 'length($0) > 5 { print $0 }' >> ${homeDir}/.zsh_history
@@ -422,17 +449,8 @@ echo "https://twitter.com/search?q=windows%20exploit%20min_faves%3A10&src=typed_
 echo ""
 echo "# Host only Adapter"
 echo "Add Host only network interface to vm"
-echo "Adjust user@ inside ~/git/misc/scripts/manage/kali-transfer.sh"
 echo "File > Host-only Network-Manager > Create"
 echo "Configure adapter manually"
 echo "IPv4-Adress: 192.168.111.1"
 echo "IPv4-Mask: 255.255.255.0"
-echo "sudo crontab -e"
-echo "# insert: "
-echo "@reboot ${homeDir}/config/config-ip.sh"
-echo "echo 'sudo nmcli device set eth1 managed no' > '${homeDir}/config/config-ip.sh'"
-echo "echo 'sudo ip a add 192.168.111.111/24 dev eth1' >> '${homeDir}/config/config-ip.sh'"
-echo "echo 'sudo ip l set eth1 up' >> '${homeDir}/config/config-ip.sh'"
-echo "echo 'sudo dhclient eth0' >> '${homeDir}/config/config-ip.sh'"
-echo "chmod 755 ${homeDir}/scripts/change-port-config.sh"
 
