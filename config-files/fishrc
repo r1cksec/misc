@@ -1,2 +1,8 @@
 alias history="history -R"
+alias ll='ls -lisa '
+alias grepIpv4="grep -Eo '([0-9]*\.){3}[0-9]*' "
+alias sortIp="sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4"
+alias clip="xclip -selection c "
+alias grepAllUrlsFromHtml="cat * | grep '<a ' | awk -F 'href=\"' '{print \$2}' | cut -d '\"' -f 1 | sort -u"
+alias diff="diff --color"
 
