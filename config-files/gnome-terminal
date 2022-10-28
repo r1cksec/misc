@@ -1,15 +1,55 @@
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+[org/gnome/terminal/legacy/profiles:/:2789ba24-84f4-4ac3-94e9-613885e4157a]
 audible-bell=false
-background-color='rgb(0,0,0)'
-bold-color='rgb(255,81,127)'
+background-color='rgb(255,255,255)'
+background-transparency-percent=4
+bold-color='rgb(21,210,252)'
 bold-color-same-as-fg=false
-cursor-background-color='rgb(38,255,25)'
+bold-is-bright=false
+cursor-background-color='rgb(80,255,0)'
 cursor-blink-mode='off'
 cursor-colors-set=true
 cursor-foreground-color='rgb(0,0,0)'
-foreground-color='rgb(247,123,32)'
-highlight-background-color='rgb(184,249,249)'
+default-size-columns=100
+default-size-rows=55
+font='JetBrains Mono 12'
+foreground-color='rgb(0,0,0)'
+highlight-background-color='rgb(26,5,99)'
 highlight-colors-set=true
-highlight-foreground-color='rgb(0,0,0)'
+highlight-foreground-color='rgb(60,255,150)'
+palette=['rgb(0,0,0)', 'rgb(205,0,0)', 'rgb(0,205,0)', 'rgb(205,205,0)', 'rgb(89,130,241)', 'rgb(205,0,205)', 'rgb(0,205,205)', 'rgb(250,235,215)', 'rgb(64,64,64)', 'rgb(255,51,51)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(255,255,255)']
+scrollbar-policy='never'
+use-system-font=true
 use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Shiro'
+
+[org/gnome/terminal/legacy/profiles:/:83bb3daa-ec84-45bc-959d-e4ace321a15b]
+audible-bell=false
+background-color='rgb(0,0,0)'
+background-transparency-percent=0
+bold-color='rgb(21,210,252)'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='rgb(17,167,31)'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='rgb(207,22,203)'
+default-size-columns=100
+default-size-rows=55
+font='JetBrains Mono 12'
+foreground-color='rgb(247,123,32)'
+highlight-background-color='rgb(26,5,99)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(60,255,150)'
+nord-gnome-terminal-version='0.1.0'
+palette=['rgb(0,0,0)', 'rgb(205,0,0)', 'rgb(0,205,0)', 'rgb(205,205,0)', 'rgb(89,130,241)', 'rgb(205,0,205)', 'rgb(0,205,205)', 'rgb(250,235,215)', 'rgb(64,64,64)', 'rgb(255,51,51)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(255,255,255)']
+scrollback-unlimited=true
+scrollbar-policy='always'
+use-system-font=true
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Kuro'
 

@@ -14,6 +14,7 @@ switch-windows=['<Super>Tab']
 [org/gnome/settings-daemon/plugins/media-keys]
 control-center=['<Shift><Super>s']
 
-[org/gnome/terminal/legacy/keybindings]
-new-window='<Super>Return'
+[org/gnome/settings-daemon/plugins/media-keys]
+control-center=['<Super>s']
+terminal=['<Super>Return']
 
