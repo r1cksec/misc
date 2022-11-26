@@ -16,7 +16,7 @@ read homeDir
 username=$(basename ${homeDir})
 
 apt update && sudo apt upgrade
-apt install htop flameshot jmtpfs python3-venv p7zip-full vim whois virtualbox virtualbox-qt virtualbox-dkms ssh ufw john zsh xclip git pass vim-gtk curl vlc feh inkscape arandr vim-gtk3 grip wl-clipboard texlive-latex-extra texlive-fonts-extra texlive-lang-german
+apt install htop flameshot jmtpfs python3-venv p7zip-full vim whois virtualbox virtualbox-qt virtualbox-dkms ssh ufw john zsh xclip git pass vim-gtk curl vlc feh inkscape arandr vim-gtk3 grip wl-clipboard texlive-latex-extra texlive-fonts-extra texlive-lang-german ffmpeg
 snap install chromium spotify
 
 rego="R"
@@ -103,4 +103,3 @@ https://twitter.com/search?q=CVE%20poc%20min_faves%3A10&src=typed_query&f=live
 https://twitter.com/search?q=linux%20exploit%20min_faves%3A10&src=typed_query&f=live
 https://twitter.com/search?q=vulnerability%20infosec%20min_faves%3A10&src=typed_query
 https://twitter.com/search?q=windows%20exploit%20min_faves%3A10&src=typed_query&f=live
-

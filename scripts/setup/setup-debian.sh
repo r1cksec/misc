@@ -46,7 +46,7 @@ then
     timedatectl set-timezone Europe/Berlin
     
     # ufw
-    apt-get install ufw tmux screen python3-venv python3-pip
+    apt-get install ufw tmux screen python3-venv python3-pip locales-all
     ufw allow 2222/tcp
     ufw limit 2222/tcp
     ufw default deny

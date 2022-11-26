@@ -1,3 +1,3 @@
 [org/gnome/shell]
-favorite-apps=['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'tor-browser.desktop', 'org.keepassxc.KeePassXC.desktop', 'root-terminal.desktop']
+favorite-apps=['org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'firefox_firefox.desktop', 'chromium_chromium.desktop', 'signal-desktop.desktop']
 

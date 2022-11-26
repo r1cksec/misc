@@ -154,6 +154,10 @@ mkdir ${homeDir}/linux-tools
 cp /root/go/bin/hakrawler /usr/local/bin
 rm -rf /root/go
 
+/usr/local/go/bin/go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+cp /root/go/bin/csprecon /usr/local/bin
+rm -rf /root/go
+
 mkdir ${homeDir}/linux-tools/namemash
 cd ${homeDir}/linux-tools/namemash
 wget https://gist.githubusercontent.com/superkojiman/11076951/raw/053152dba6c5cc3107ff0374ce7246306958d72c/namemash.py
