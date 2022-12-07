@@ -158,6 +158,17 @@ rm -rf /root/go
 cp /root/go/bin/csprecon /usr/local/bin
 rm -rf /root/go
 
+/usr/local/go/bin/go install github.com/dhn/spk@latest
+cp /root/go/bin/spk /usr/local/bin
+rm -rf /root/go
+
+mkdir ${homeDir}/linux-tools/geckodriver
+cd ${homeDir}/linux-tools/geckodriver
+wget https://github.com/projectdiscovery/katana/releases/download/v0.0.2/katana_0.0.2_linux_386.zip
+gunzip geckodriver-*.tar.gz
+tar -xf geckodriver-*.tar
+sudo cp geckodriver /usr/local/bin
+
 mkdir ${homeDir}/linux-tools/namemash
 cd ${homeDir}/linux-tools/namemash
 wget https://gist.githubusercontent.com/superkojiman/11076951/raw/053152dba6c5cc3107ff0374ce7246306958d72c/namemash.py
