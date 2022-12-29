@@ -164,10 +164,21 @@ rm -rf /root/go
 
 mkdir ${homeDir}/linux-tools/geckodriver
 cd ${homeDir}/linux-tools/geckodriver
-wget https://github.com/projectdiscovery/katana/releases/download/v0.0.2/katana_0.0.2_linux_386.zip
+wget https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz
 gunzip geckodriver-*.tar.gz
 tar -xf geckodriver-*.tar
-sudo cp geckodriver /usr/local/bin
+cp geckodriver /usr/local/bin
+
+mkdir ${homeDir}/linux-tools/katana
+cd ${homeDir}/linux-tools/katana
+wget https://github.com/projectdiscovery/katana/releases/download/v0.0.2/katana_0.0.2_linux_386.zip
+unzip *
+cp ${homeDir}/linux-tools/katana/katana /usr/local/bin
+
+mkdir ${homeDir}/linux-tools/letItGo
+cd ${homeDir}/linux-tools/letItGo
+wget https://github.com/SecurityRiskAdvisors/letItGo/releases/download/v1.0/letItGo_v1.0_linux_amd64
+cp letItGo_v1.0_linux_amd64 /usr/local/bin/letItGo
 
 mkdir ${homeDir}/linux-tools/namemash
 cd ${homeDir}/linux-tools/namemash
@@ -198,7 +209,7 @@ wget https://dl.pstmn.io/download/latest/linux64
 
 mkdir ${homeDir}/linux-tools/subfinder
 cd ${homeDir}/linux-tools/subfinder
-wget https://github.com/projectdiscovery/subfinder/releases/download/v2.5.4/subfinder_2.5.4_linux_amd64.zip
+wget https://github.com/projectdiscovery/subfinder/releases/download/v2.5.5/subfinder_2.5.5_linux_amd64.zip
 unzip *
 chmod +x *
 cp ${homeDir}/linux-tools/subfinder/subfinder /usr/local/bin
@@ -212,9 +223,10 @@ cp ${homeDir}/linux-tools/scanrepo/scanrepo /usr/local/bin
 
 mkdir ${homeDir}/linux-tools/gitleaks
 cd ${homeDir}/linux-tools/gitleaks
-wget https://github.com/zricethezav/gitleaks/releases/download/v7.6.1/gitleaks-linux-amd64
+wget https://github.com/zricethezav/gitleaks/releases/download/v8.15.2/gitleaks_8.15.2_linux_x64.tar.gz
+tar -xf *
 chmod +x *
-cp ${homeDir}/linux-tools/gitleaks/gitleaks-linux-amd64 /usr/local/bin
+cp ${homeDir}/linux-tools/gitleaks/gitleaks /usr/local/bin
 
 mkdir ${homeDir}/linux-tools/waybackurls
 cd ${homeDir}/linux-tools/waybackurls
@@ -232,7 +244,7 @@ cp ${homeDir}/linux-tools/bettercap/bettercap /usr/local/bin
 
 mkdir ${homeDir}/linux-tools/amass
 cd ${homeDir}/linux-tools/amass
-wget https://github.com/OWASP/Amass/releases/download/v3.19.2/amass_linux_amd64.zip
+wget https://github.com/OWASP/Amass/releases/download/v3.21.2/amass_linux_amd64.zip
 unzip *
 chmod +x *
 cp ${homeDir}/linux-tools/amass/amass_linux_amd64/amass /usr/local/bin
